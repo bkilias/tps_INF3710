@@ -18,9 +18,12 @@ CREATE TABLE Dept (
 CREATE TABLE Prof (
 	pID char(2) PRIMARY KEY,
 	pnom char(2),
-	dep char(25) NOT NULL UNIQUE, --Ajout de UNIQUE pour répondre à la question 1.2
-	FOREIGN KEY(dep) REFERENCES Dept(dID)
+	dep char(25) NOT NULL, 
+	FOREIGN KEY(dep) REFERENCES Dept(dID),
+	CONSTRAINT uniqueProf UNIQUE (dep) --Ajout de UNIQUE pour répondre à la question 1.2
 );
+
+
 
 CREATE TABLE Cours (
 	cno char(3) PRIMARY KEY,
